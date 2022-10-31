@@ -1,21 +1,20 @@
 import math
 import matplotlib.pyplot as plt
+from Generaldistribution import Distribution
 
-class Gaussian() :
-    """Gaussian distribution class for calculating and
-    visualizing a Gaussian distribution.
+class Gaussian(Distribution):
+    """Gaussian distribution class for calculating and 
+    visualizaing a Gaussian distribution.
     
     Attributes:
-    mean (float) representing the mean value of the distribution
-    stdev (float) representing the standard deviation of the distribution
-    data_list (list of floats) a list of floats extracted from the data file
+        mean(float) representing the mean value of the distribution
+        stdev(float) representing the standard deviation of the distribution
+        data_list (list of floats) a list of floats extracted from the dat file
+        
     """
 
     def __init__(self, mu = 0, sigma = 1):
-
-        self.mean = mu
-        self.stdev = sigma
-        self.data = []
+        Distribution.__init__(self, mu, sigma)
 
     def calculate_mean(self):
         """Function to calculate the mean of the data set.
@@ -182,7 +181,7 @@ class Gaussian() :
             string: characteristics of the Gaussian
             
         """
-        return "mean {},standard deviation {}".format(self.mean, self.stdev  )
+        return "mean {},standard deviation {}".format(self.mean, self.stdev)
 
 # import unittest
 
